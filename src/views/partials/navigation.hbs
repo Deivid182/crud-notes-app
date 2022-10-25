@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container">
+    <a class="navbar-brand text-light" href="#">Notes App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+      <span class="navbar">
+        {{#if user}}
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Notes
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/notes">All notes</a></li>
+              <li><a class="dropdown-item" href="/notes/add">Add a Note</a></li>
+              <li><a class="dropdown-item" href="/users/logout">Log Out</a></li>
+            </ul>
+          </div>
+
+        {{else}}
+          <ul class="me-3 mt-3">
+            <li class="nav-item d-inline-block me-2">
+              <a class="nav-link active text-light" aria-current="page" href="/users/signin">Sign In</a>
+            </li>
+            <li class="nav-item d-inline-block">
+              <a class="nav-link text-light" href="/users/signup">Sign Up</a>
+            </li>
+          </ul>
+        {{/if}}
+      </span>
+    </div>
+  </div>
+</nav>
